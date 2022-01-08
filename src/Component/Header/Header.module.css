@@ -1,0 +1,10 @@
+.Container{
+    display: flex;
+    align-items: center;
+    gap:1%
+}
+@media (max-width: 425px){
+    .Container{
+        justify-content: center;
+    }
+}

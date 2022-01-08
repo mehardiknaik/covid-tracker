@@ -1,6 +1,6 @@
 import { Card, CardContent, Typography, Grid } from "@mui/material";
 import { Line } from "react-chartjs-2";
-import {Color} from "../Color";
+import { Color } from "../Color";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -27,11 +27,23 @@ const Chart = ({ data, name }) => {
   return (
     <div>
       <Typography variant="h5">{name}</Typography>
-      <Grid item component={Card} xs={12} md={12} style={{'border-bottom': `10px solid ${Color()}`}}>
+      <Grid
+        item
+        component={Card}
+        xs={12}
+        md={12}
+        style={{ borderBottom: `10px solid ${Color()}` }}
+      >
         <CardContent>
           <Line
             data={{
-              labels: data.map((coin) => new Date(coin.date).toLocaleDateString("en-US", {year: '2-digit', month: 'short', day: 'numeric' })),
+              labels: data.map((coin) =>
+                new Date(coin.date).toLocaleDateString("en-US", {
+                  year: "2-digit",
+                  month: "short",
+                  day: "numeric",
+                })
+              ),
 
               datasets: [
                 {
@@ -49,7 +61,7 @@ const Chart = ({ data, name }) => {
               responsive: true,
               interaction: {
                 // mode: 'index'
-            },
+              },
               plugins: {
                 legend: {
                   display: false,
@@ -67,13 +79,13 @@ const Chart = ({ data, name }) => {
                   ticks: {
                     // maxTicksLimit: 8,
                     maxRotation: 0,
-                    callback: function(val, index) {
-                      return index % 2=== 0 ? this.getLabelForValue(val) : '';
+                    callback: function (val, index) {
+                      return index % 2 === 0 ? this.getLabelForValue(val) : "";
                     },
-                  }
+                  },
                 },
                 y: {
-                  display: false
+                  display: false,
                 },
               },
             }}

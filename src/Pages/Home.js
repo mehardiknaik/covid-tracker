@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Widget from "../Component/Widget/Widget";
 import Chart from "../Component/Chart/Chart";
 import Loader from "react-loader-spinner";
-import {Color} from "../Component/Color";
+import { Color } from "../Component/Color";
+import Header from "../Component/Header/Header";
 
 const Home = () => {
   const [widgetData, setwidgetData] = useState();
@@ -32,39 +33,41 @@ const Home = () => {
     widgetobj["Death"] = {
       total: data[data.length - 1]["deaths"],
       newCase: deathCount[deathCount.length - 1]["Death"],
+      date: new Date(data[data.length - 1]["date"]),
     };
     widgetobj["Confirmed"] = {
       total: data[data.length - 1]["confirmed"],
       newCase: deathCount[deathCount.length - 1]["Confirmed"],
+      date: new Date(data[data.length - 1]["date"]),
     };
-    setwidgetData(widgetobj)
+    setwidgetData(widgetobj);
+
     setnewCases(deathCount);
   };
   useEffect(() => {
     getData();
   }, []);
-  return (
-    <Container>
-      {widgetData && newCases ?(
-        <>
-          <Widget data={widgetData?.Death} name={"Death"}/>
-          <Widget data={widgetData?.Confirmed} name={"Confirmed"}/>
-          <Chart data={newCases} name={"Death"} />
-          <Chart data={newCases} name={"Confirmed"} />
-        </>
-      ):
-      <div style={{'display': 'flex',
-        'align-items': 'center',
-        'justify-content': 'center',
-        'height': '95vh',}}>
-      <Loader
-      type="Puff"
-      color={Color()}
-      height={100}
-      width={100}
-    /></div>
-    }
-    </Container>
+  return widgetData && newCases ? (
+    <>
+      <Header />
+      <Container>
+        <Widget data={widgetData?.Death} name={"Death"} />
+        <Widget data={widgetData?.Confirmed} name={"Confirmed"} />
+        <Chart data={newCases} name={"Death"} />
+        <Chart data={newCases} name={"Confirmed"} />
+      </Container>
+    </>
+  ) : (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "95vh",
+      }}
+    >
+      <Loader type="Puff" color={Color()} height={100} width={100} />
+    </div>
   );
 };
 

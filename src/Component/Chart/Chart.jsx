@@ -24,7 +24,6 @@ ChartJS.register(
 );
 
 const Chart = ({ data }) => {
-  const dat = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   console.log("chart :", data);
 
   return (
@@ -34,7 +33,7 @@ const Chart = ({ data }) => {
         <CardContent>
           <Line
             data={{
-              labels: data.map((coin) => new Date(coin.date).toLocaleDateString("en-US", {year: 'numeric', month: 'short', day: 'numeric' })),
+              labels: data.map((coin) => new Date(coin.date).toLocaleDateString("en-US", {year: '2-digit', month: 'short', day: 'numeric' })),
 
               datasets: [
                 {
@@ -67,6 +66,13 @@ const Chart = ({ data }) => {
                   grid: {
                     display: false,
                   },
+                  ticks: {
+                    // maxTicksLimit: 8,
+                    maxRotation: 0,
+                    callback: function(val, index) {
+                      return index % 2=== 0 ? this.getLabelForValue(val) : '';
+                    },
+                  }
                 },
                 y: {
                   grid: {

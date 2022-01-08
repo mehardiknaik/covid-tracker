@@ -17,7 +17,7 @@ const Widget = ({data,name}) => {
 
             </Typography>
             <Typography variant="body2">
-              Number of Death cases of COVID-19 Till Now
+              Number of {name} cases of COVID-19 Till Now
             </Typography>
           </CardContent>
         </Grid>
@@ -31,7 +31,7 @@ const Widget = ({data,name}) => {
               
             </Typography>
             <Typography variant="body2">
-              Number of Death cases of COVID-19 Today
+              Number of {name} cases of COVID-19 Today
             </Typography>
           </CardContent>
         </Grid>

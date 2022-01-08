@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/covid-tracker/static/css/main.e1e5ed40.css",
-    "main.js": "/covid-tracker/static/js/main.87460236.js",
+    "main.js": "/covid-tracker/static/js/main.1e784eed.js",
     "static/js/787.851c884c.chunk.js": "/covid-tracker/static/js/787.851c884c.chunk.js",
     "static/media/logo.svg": "/covid-tracker/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/covid-tracker/index.html",
     "main.e1e5ed40.css.map": "/covid-tracker/static/css/main.e1e5ed40.css.map",
-    "main.87460236.js.map": "/covid-tracker/static/js/main.87460236.js.map",
+    "main.1e784eed.js.map": "/covid-tracker/static/js/main.1e784eed.js.map",
     "787.851c884c.chunk.js.map": "/covid-tracker/static/js/787.851c884c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e1e5ed40.css",
-    "static/js/main.87460236.js"
+    "static/js/main.1e784eed.js"
   ]
 }

@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Widget from "../Component/Widget/Widget";
 import Chart from "../Component/Chart/Chart";
+import Loader from "react-loader-spinner";
+import {Color} from "../Component/Color";
 
 const Home = () => {
   const [widgetData, setwidgetData] = useState();
@@ -43,14 +45,25 @@ const Home = () => {
   }, []);
   return (
     <Container>
-      {widgetData && newCases && (
+      {widgetData && newCases ?(
         <>
           <Widget data={widgetData?.Death} name={"Death"}/>
           <Widget data={widgetData?.Confirmed} name={"Confirmed"}/>
           <Chart data={newCases} name={"Death"} />
           <Chart data={newCases} name={"Confirmed"} />
         </>
-      )}
+      ):
+      <div style={{'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'height': '100vh',}}>
+      <Loader
+      type="Puff"
+      color={Color()}
+      height={100}
+      width={100}
+    /></div>
+    }
     </Container>
   );
 };

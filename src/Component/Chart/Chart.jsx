@@ -24,8 +24,6 @@ ChartJS.register(
 );
 
 const Chart = ({ data, name }) => {
-  console.log("chart :", data);
-
   return (
     <div>
       <Typography variant="h5">{name}</Typography>

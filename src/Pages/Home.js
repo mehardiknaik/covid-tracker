@@ -56,7 +56,7 @@ const Home = () => {
       <div style={{'display': 'flex',
         'align-items': 'center',
         'justify-content': 'center',
-        'height': '100vh',}}>
+        'height': '95vh',}}>
       <Loader
       type="Puff"
       color={Color()}

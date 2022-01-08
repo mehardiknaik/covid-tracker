@@ -1,6 +1,6 @@
 import { Card, CardContent, Typography, Grid } from "@mui/material";
 import { Line } from "react-chartjs-2";
-import styles from "./Chart.module.css";
+import {Color} from "../Color";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -23,13 +23,13 @@ ChartJS.register(
   LineElement
 );
 
-const Chart = ({ data }) => {
+const Chart = ({ data, name }) => {
   console.log("chart :", data);
 
   return (
     <div>
-      <Typography variant="h5">Death</Typography>
-      <Grid item component={Card} xs={12} md={12} className={styles.Chart}>
+      <Typography variant="h5">{name}</Typography>
+      <Grid item component={Card} xs={12} md={12} style={{'border-bottom': `10px solid ${Color()}`}}>
         <CardContent>
           <Line
             data={{
@@ -37,9 +37,9 @@ const Chart = ({ data }) => {
 
               datasets: [
                 {
-                  data: data.map((coin) => coin.deaths),
+                  data: data.map((coin) => coin[name]),
                   label: ``,
-                  borderColor: "#EEBC1D",
+                  borderColor: Color(),
                   fill: false,
                   borderWidth: 2,
                   pointRadius: 0,
@@ -50,7 +50,7 @@ const Chart = ({ data }) => {
             options={{
               responsive: true,
               interaction: {
-                mode: 'index'
+                // mode: 'index'
             },
               plugins: {
                 legend: {
@@ -75,9 +75,7 @@ const Chart = ({ data }) => {
                   }
                 },
                 y: {
-                  grid: {
-                    display: false,
-                  },
+                  display: false
                 },
               },
             }}

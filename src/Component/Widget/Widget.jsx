@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, Typography, Grid } from "@mui/material";
-import styles from "./Widget.module.css";
+import {Color} from "../Color"
 
 const Widget = ({ data }) => {
   const [today, setToday] = useState();
@@ -17,7 +17,7 @@ const Widget = ({ data }) => {
       return a;
     }, {});
     setToday(newObj);
-    console.log("newObj :", newObj, previousdata);
+    console.log("newObj :",);
   };
   useEffect(() => {
     calculation();
@@ -26,7 +26,7 @@ const Widget = ({ data }) => {
     <div>
       <Typography variant="h5">Death</Typography>
       <div style={{ display: "flex", gap: "2%", margin: "0 0 2% 0" }}>
-        <Grid item component={Card} xs={6} md={12} className={styles.tillnow}>
+        <Grid item component={Card} xs={6} md={12} style={{'border-bottom': `10px solid ${Color()}`}}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Till Now
@@ -40,7 +40,7 @@ const Widget = ({ data }) => {
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card} xs={6} md={12} className={styles.today}>
+        <Grid item component={Card} xs={6} md={12} style={{'border-bottom': `10px solid ${Color()}`}}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Today
@@ -57,7 +57,7 @@ const Widget = ({ data }) => {
       </div>
       <Typography variant="h5">Confirmed</Typography>
       <div style={{ display: "flex", gap: "2%" }}>
-        <Grid item component={Card} xs={6} md={12} className={styles.tillnow}>
+        <Grid item component={Card} xs={6} md={12} style={{'border-bottom': `10px solid ${Color()}`}}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Till Now
@@ -71,7 +71,7 @@ const Widget = ({ data }) => {
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card} xs={6} md={12} className={styles.today}>
+        <Grid item component={Card} xs={6} md={12} style={{'border-bottom': `10px solid ${Color()}`}}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Today

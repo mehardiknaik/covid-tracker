@@ -1,7 +1,14 @@
 .Container{
     display: flex;
     align-items: center;
-    gap:1%
+    gap:1%;
+    position: sticky;
+    top: 0;
+    background: #e6e6e6;
+    height: 54px;
+    z-index: 100;
+    margin-bottom: 5px;
+    padding: 0 7px;
 }
 .image{
     animation: rotation 3s infinite linear;

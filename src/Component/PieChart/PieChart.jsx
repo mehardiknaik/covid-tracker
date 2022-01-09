@@ -28,6 +28,8 @@ const PieChart = ({ data }) => {
               labels: ["Confirmed", "Death"],
             }}
             options={{
+            //   rotation: -90,
+            //   circumference: 180,
               responsive: true,
               maintainAspectRatio: true,
             }}

@@ -5,7 +5,6 @@ import Widget from "../Component/Widget/Widget";
 import Chart from "../Component/Chart/Chart";
 import Loader from "react-loader-spinner";
 import { Color } from "../Component/Color";
-import Header from "../Component/Header/Header";
 import PieChart from "../Component/PieChart/PieChart";
 
 const Home = () => {
@@ -49,22 +48,19 @@ const Home = () => {
 
     setnewCases(deathCount);
 
-    setpiechartdata(piedata)
+    setpiechartdata(piedata);
   };
   useEffect(() => {
     getData();
   }, []);
   return widgetData && newCases && piechartdata ? (
-    <>
-      <Header />
-      <Container>
-        <Widget data={widgetData?.Death} name={"Death"} />
-        <Widget data={widgetData?.Confirmed} name={"Confirmed"} />
-        <Chart data={newCases} name={"Death"} />
-        <Chart data={newCases} name={"Confirmed"} />
-        <PieChart data={piechartdata} />
-      </Container>
-    </>
+    <Container>
+      <Widget data={widgetData?.Death} name={"Death"} />
+      <Widget data={widgetData?.Confirmed} name={"Confirmed"} />
+      <Chart data={newCases} name={"Death"} />
+      <Chart data={newCases} name={"Confirmed"} />
+      <PieChart data={piechartdata} />
+    </Container>
   ) : (
     <div
       style={{

@@ -6,10 +6,12 @@ import Chart from "../Component/Chart/Chart";
 import Loader from "react-loader-spinner";
 import { Color } from "../Component/Color";
 import Header from "../Component/Header/Header";
+import PieChart from "../Component/PieChart/PieChart";
 
 const Home = () => {
   const [widgetData, setwidgetData] = useState();
   const [newCases, setnewCases] = useState();
+  const [piechartdata, setpiechartdata] = useState();
 
   const url = "https://pomber.github.io/covid19/timeseries.json";
   const getData = async () => {
@@ -40,14 +42,19 @@ const Home = () => {
       newCase: deathCount[deathCount.length - 1]["Confirmed"],
       date: new Date(data[data.length - 1]["date"]),
     };
+
+    let piedata = deathCount[deathCount.length - 1];
+
     setwidgetData(widgetobj);
 
     setnewCases(deathCount);
+
+    setpiechartdata(piedata)
   };
   useEffect(() => {
     getData();
   }, []);
-  return widgetData && newCases ? (
+  return widgetData && newCases && piechartdata ? (
     <>
       <Header />
       <Container>
@@ -55,6 +62,7 @@ const Home = () => {
         <Widget data={widgetData?.Confirmed} name={"Confirmed"} />
         <Chart data={newCases} name={"Death"} />
         <Chart data={newCases} name={"Confirmed"} />
+        <PieChart data={piechartdata} />
       </Container>
     </>
   ) : (

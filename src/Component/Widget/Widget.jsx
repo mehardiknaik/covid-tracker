@@ -18,7 +18,7 @@ const Widget = ({ data, name }) => {
             <Typography color="textSecondary" gutterBottom>
               Till Now
             </Typography>
-            <Typography variant="h5">{total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Typography>
+            <Typography variant="h5">{total.toString().replace(/(\d)(?=(\d\d)+\d$)/g, "$1,")}</Typography>
             <Typography color="textSecondary">
               {date.toLocaleDateString("en-US", {
                 year: "numeric",
@@ -42,7 +42,7 @@ const Widget = ({ data, name }) => {
             <Typography color="textSecondary" gutterBottom>
               Today
             </Typography>
-            <Typography variant="h5">{newCase.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Typography>
+            <Typography variant="h5">{newCase.toString().replace(/(\d)(?=(\d\d)+\d$)/g, "$1,")}</Typography>
             <Typography color="textSecondary">
               {date.toLocaleDateString("en-US", {
                 year: "numeric",

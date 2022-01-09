@@ -25,7 +25,7 @@ ChartJS.register(
 
 const Chart = ({ data, name }) => {
   return (
-    <div>
+    <div style={{margin: "0 0 2% 0" }}>
       <Typography variant="h5">{name}</Typography>
       <Grid
         item

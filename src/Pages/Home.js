@@ -3,9 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Widget from "../Component/Widget/Widget";
 import Chart from "../Component/Chart/Chart";
-import Loader from "react-loader-spinner";
-import { Color } from "../Component/Color";
 import PieChart from "../Component/PieChart/PieChart";
+import Loader from "../Component/Loader/Loader";
 
 const Home = () => {
   const [widgetData, setwidgetData] = useState();
@@ -62,16 +61,7 @@ const Home = () => {
       <PieChart data={piechartdata} />
     </Container>
   ) : (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "95vh",
-      }}
-    >
-      <Loader type="Puff" color={Color()} height={100} width={100} />
-    </div>
+    <Loader />
   );
 };
 

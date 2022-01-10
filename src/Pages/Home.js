@@ -52,7 +52,15 @@ const Home = () => {
   useEffect(() => {
     getData();
   }, []);
-  return  (
+  return widgetData && newCases && piechartdata ? (
+    <Container>
+      <Widget data={widgetData?.Death} name={"Death"} />
+      <Widget data={widgetData?.Confirmed} name={"Confirmed"} />
+      <Chart data={newCases} name={"Death"} />
+      <Chart data={newCases} name={"Confirmed"} />
+      <PieChart data={piechartdata} />
+    </Container>
+  ) : (
     <Loader />
   );
 };

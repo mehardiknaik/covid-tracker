@@ -59,9 +59,10 @@ const Chart = ({ data, name }) => {
             }}
             options={{
               responsive: true,
-              interaction: {
-                // mode: 'index'
-              },
+            hover: {
+                mode: 'nearest',
+                intersect: false
+            },
               plugins: {
                 legend: {
                   display: false,
@@ -70,6 +71,10 @@ const Chart = ({ data, name }) => {
                   display: false,
                   text: "Chart.js Line Chart",
                 },
+                tooltip: {
+                  mode: 'index',
+                  intersect: false,
+              }
               },
               scales: {
                 x: {

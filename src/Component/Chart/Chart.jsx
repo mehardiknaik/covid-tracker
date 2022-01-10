@@ -25,7 +25,7 @@ ChartJS.register(
 
 const Chart = ({ data, name }) => {
   return (
-    <div style={{margin: "0 0 2% 0" }}>
+    <div style={{ margin: "0 0 2% 0" }}>
       <Typography variant="h5">{name}</Typography>
       <Grid
         item
@@ -59,10 +59,10 @@ const Chart = ({ data, name }) => {
             }}
             options={{
               responsive: true,
-            hover: {
-                mode: 'nearest',
-                intersect: false
-            },
+              hover: {
+                mode: "nearest",
+                intersect: false,
+              },
               plugins: {
                 legend: {
                   display: false,
@@ -72,9 +72,9 @@ const Chart = ({ data, name }) => {
                   text: "Chart.js Line Chart",
                 },
                 tooltip: {
-                  mode: 'index',
+                  mode: "index",
                   intersect: false,
-              }
+                },
               },
               scales: {
                 x: {

@@ -61,7 +61,7 @@ const Chart = ({ data, name }) => {
               responsive: true,
               hover: {
                 mode: "index",
-                axis: 'x',
+                axis: "x",
                 intersect: false,
               },
               plugins: {
@@ -74,7 +74,7 @@ const Chart = ({ data, name }) => {
                 },
                 tooltip: {
                   mode: "index",
-                  axis: 'x',
+                  axis: "x",
                   intersect: false,
                 },
               },

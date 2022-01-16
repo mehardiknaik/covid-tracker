@@ -94,7 +94,7 @@ const Chart = ({ data, name }) => {
                   },
                   pan:{
                     enabled: true,
-                    mode: "xy",
+                    mode: "x",
                   }
                 },
               },

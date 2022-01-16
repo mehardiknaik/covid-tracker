@@ -1,5 +1,4 @@
 import { Typography } from "@mui/material"
-import { useState } from "react";
 import logo from '../images/logo.png';
 import styles from "./Header.module.css"
 

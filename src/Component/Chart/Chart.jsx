@@ -12,6 +12,7 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
+import zoomPlugin from "chartjs-plugin-zoom";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -20,7 +21,8 @@ ChartJS.register(
   Tooltip,
   Legend,
   PointElement,
-  LineElement
+  LineElement,
+  zoomPlugin
 );
 
 const Chart = ({ data, name }) => {
@@ -76,6 +78,24 @@ const Chart = ({ data, name }) => {
                   mode: "index",
                   axis: "x",
                   intersect: false,
+                },
+                zoom: {
+                  zoom: {
+                    wheel: {
+                      enabled: true,
+                    },
+                    pinch: {
+                      enabled: true,
+                    },
+                    mode: "xy",
+                    drag:{
+                      enabled: true,
+                    }
+                  },
+                  pan:{
+                    enabled: true,
+                    mode: "xy",
+                  }
                 },
               },
               scales: {

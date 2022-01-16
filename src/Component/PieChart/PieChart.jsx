@@ -5,7 +5,7 @@ import { Chart as ChartJS, ArcElement } from "chart.js";
 ChartJS.register(ArcElement);
 
 const PieChart = ({ data }) => {
-  const { Confirmed, Death, date } = data;
+  const { Confirmed, Death } = data;
   return (
     <div style={{ margin: "0 0 2% 0" }}>
       <Typography variant="h5">PieChart</Typography>

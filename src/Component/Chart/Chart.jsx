@@ -88,14 +88,15 @@ const Chart = ({ data, name }) => {
                       enabled: true,
                     },
                     mode: "xy",
-                    drag:{
+                    drag: {
                       enabled: true,
-                    }
+                      modifierKey:"ctrl",
+                    },
                   },
-                  pan:{
+                  pan: {
                     enabled: true,
-                    mode: "x",
-                  }
+                    mode: "xy",
+                  },
                 },
               },
               scales: {

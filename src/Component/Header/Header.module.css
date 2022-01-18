@@ -10,9 +10,18 @@
     padding: 0 7px;
     transition: all 0.5s ease;
     backdrop-filter: blur(10px);
+    justify-content: space-between;
 }
 .image{
     animation: rotation 3s infinite linear;
+}
+.leftcontainer{
+  display: flex;
+  cursor: pointer;
+}
+.rightcontainer{
+  width: 25px;
+  cursor: pointer;
 }
 @keyframes rotation {
     from {
@@ -22,9 +31,3 @@
       transform: rotate(359deg);
     }
   }
-
-@media (max-width: 425px){
-    .Container{
-        justify-content: center;
-    }
-}

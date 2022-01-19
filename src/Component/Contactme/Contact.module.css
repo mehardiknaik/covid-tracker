@@ -1,0 +1,25 @@
+.container{
+    position: relative;
+    margin: auto;
+    background: #e1ddd6;;
+    height: fit-content;
+    width: fit-content;
+    padding: 3px 16px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container::before{
+    content: "";
+    background: green;
+    transform: translateX(-27px);
+    position: absolute;
+    height: 11px;
+    width: 11px;
+    border-radius: 50px;
+    border: 3px solid white;
+}

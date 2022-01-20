@@ -67,12 +67,6 @@ const Contactme = () => {
                 url="http://instagram.com/hardiknaikk"
               />
               <Link
-                primary="#ffe6e6"
-                secondary="#e70000"
-                text="Mail"
-                url="mailto:hardiknaik7444@gmail.com"
-              />
-              <Link
                 primary="#e6faff"
                 secondary="#00a7d1"
                 text="LinkedIn"
@@ -83,6 +77,12 @@ const Contactme = () => {
                 secondary="#808080"
                 text="Github"
                 url="https://github.com/mehardiknaik"
+              />
+              <Link
+                primary="#ffe6e6"
+                secondary="#e70000"
+                text="Mail"
+                url="mailto:hardiknaik7444@gmail.com"
               />
             </div>
           </CardContent>
@@ -95,7 +95,7 @@ const Contactme = () => {
 const Link = (props) => {
   const classes = useStyles(props);
   const click = () => {
-    window.open(props.url, "_parent");
+    window.open(props.url, "_blank");
   };
   return (
     <div onClick={click} className={classes.container}>

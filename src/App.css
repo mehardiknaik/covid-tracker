@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   background: #fafafa;
+  user-select: none;
 }
 a:-webkit-any-link {
   text-decoration: none;

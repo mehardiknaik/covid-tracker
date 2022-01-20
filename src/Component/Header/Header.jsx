@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import logo from "../images/logo.png";
 import styles from "./Header.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();

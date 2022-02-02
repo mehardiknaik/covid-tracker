@@ -30,10 +30,12 @@ const useStyles = makeStyles((theme) => ({
       border: "3px solid white",
     },
     "&:hover": {
-      transform: "scale(2)",
+      transform: "scale(1.2)",
       zIndex: 2,
-      "& $textcontainer": {
-        transform: "translateY(20px)",
+      "& div": {
+        "& div": {
+          transform: "translateY(0px)",
+        },
       },
     },
   }),
@@ -55,34 +57,39 @@ const Contactme = () => {
           <CardContent>
             <div className={styles.CardContainer}>
               <Link
+                primary="#ffe6e6"
+                secondary="#e70000"
+                text="Mail"
+                url="mailto:hardiknaik7444@gmail.com"
+                secondtext="hardiknaik7444@gmail.com"
+              />
+              <Link
                 primary="#e6e6ff"
                 secondary="#0000cb"
                 text="Facebook"
                 url="https://facebook.com/hardiknaikk"
+                secondtext="hardiknaikk"
               />
               <Link
                 primary="#fde6ff"
                 secondary="#bb00cb"
                 text="Instagram"
                 url="http://instagram.com/hardiknaikk"
+                secondtext="hardiknaikk"
               />
               <Link
                 primary="#e6faff"
                 secondary="#00a7d1"
                 text="LinkedIn"
                 url="http://linkedin.com/in/hardik-naik"
+                secondtext="hardik-naik"
               />
               <Link
                 primary="#ededed"
                 secondary="#808080"
                 text="Github"
                 url="https://github.com/mehardiknaik"
-              />
-              <Link
-                primary="#ffe6e6"
-                secondary="#e70000"
-                text="Mail"
-                url="mailto:hardiknaik7444@gmail.com"
+                secondtext="mehardiknaik"
               />
             </div>
           </CardContent>
@@ -101,7 +108,7 @@ const Link = (props) => {
     <div onClick={click} className={classes.container}>
       <div className={classes.textcontainer}>
         <div>{props.text}</div>
-        {/* <div className={classes.secondtext}>test</div> */}
+        <div className={classes.secondtext}>{props.secondtext}</div>
       </div>
     </div>
   );
